@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('extract-css-chunks-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -12,15 +12,16 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+    chunkFilename: '[name]-chunk.js',
     publicPath: '/',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 8080,
+    port: 9000,
     watchContentBase: true,
   },
-  devtool: '#inline-source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -36,7 +37,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: process.env.NODE_ENV === 'development',
+              hot: true,
               reloadAll: true, // fallback reload
             },
           },
