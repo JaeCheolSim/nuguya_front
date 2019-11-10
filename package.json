@@ -1,0 +1,37 @@
+{
+  "name": "nuguya",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot --open -d",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaeCheolSim/nuguya_front.git"
+  },
+  "author": "jaecheolsim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaeCheolSim/nuguya_front/issues"
+  },
+  "homepage": "https://github.com/JaeCheolSim/nuguya_front#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "path": "^0.12.7",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack-dev-server": "^3.9.0",
+    "yarn": "^1.19.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6"
+  }
+}
