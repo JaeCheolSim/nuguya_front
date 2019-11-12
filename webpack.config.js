@@ -25,6 +25,20 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(html)$/,
+        include: path.join(__dirname, 'src/'),
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              interpolate: true,
+              removeComments: true,
+              collapseWhitespace: true
+            },
+          },
+        ]
+      },
+      {
         test: /\.js$/,
         exclude: __dirname + 'node_modules',
         use: {
@@ -51,7 +65,12 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/home.html'
+      filename: 'home.html',
+      template: './src/home.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'detail.html',
+      template: './src/detail.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
