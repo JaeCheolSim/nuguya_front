@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --open",
-    "build": "webpack"
+    "build": "webpack",
+    "prod": "webpack --mode production"
   },
   "repository": {
     "type": "git",
