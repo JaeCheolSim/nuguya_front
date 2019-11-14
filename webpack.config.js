@@ -18,7 +18,6 @@ module.exports = (env, options) => {
     },
     devServer: {
       contentBase: path.join(__dirname, 'dist/nuguya/resources/'),
-      compress: true,
       port: 9000,
       watchContentBase: true,
     },
@@ -57,16 +56,29 @@ module.exports = (env, options) => {
               },
             },
             'css-loader',
-            //'postcss-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: [
+                  require('autoprefixer')({ ...options })
+                ]
+              }
+            },
             'sass-loader',
           ],
+        },
+        {
+          test: /\.png$/,
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]?[hash]'
+          }
         }
       ]
     },
     plugins: [
-      new CleanWebpackPlugin({
-        cleanOnceBeforeBuildPatterns: ['/dist/**/*'],
-      }),
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: 'home.html',
         template: './src/home.html',
@@ -74,6 +86,10 @@ module.exports = (env, options) => {
       new HtmlWebpackPlugin({
         filename: 'detail.html',
         template: './src/detail.html',
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'result.html',
+        template: './src/result.html',
       }),
       new MiniCssExtractPlugin({
         filename: '[name].css',
@@ -86,21 +102,6 @@ module.exports = (env, options) => {
       extensions: ['.js', '.json', '.jsx', '.css'],
     },
   };
-
-  // if(options.mode == 'development') {
-
-  // }else if(options.mode == 'production') {
-  //   config = {
-  //     ...config,
-  //     mode : 'production',
-  //     output: {
-  //       path: path.resolve(__dirname, 'dist/nuguya/resources/'),
-  //       filename: '[name].js',
-  //       chunkFilename: '[name]-chunk.js',
-  //       publicPath: '/nuguya/resources/',
-  //     },
-  //   }
-  // }
 
   return config;
 };

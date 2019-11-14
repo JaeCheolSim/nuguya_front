@@ -13,58 +13,52 @@
     <h1 class="header_logoname">NUGUYA</h1>
 </header>
 
-    <ul class="detail">
-        <div class="detail-topinfo">
-            <section class="progbar">
-                <div class="progbar_back">
-                    <div class="progbar_fill"></div>
-                </div>
-                <span class="progbar_count">
-                    <span class="progbar_current">4</span>
-                    /
-                    <span class="progbar_total">10</span>
-                </span>
-            </section>
-        </div>
+    <section class="detail">
 
-        <!-- [D] on : emoji추가 -->
-        <section class="detail-main on">
-            <section class="unit">
-                <img src="https://placehold.it/343x343" alt="카드 이미지" class="unit_img">
+        <p class="progress">
+            <span class="progress_current">1</span>
+            <span class="progress_tx">/</span>
+            <span class="progress_total">10</span>
+        </p>
+
+        <main class="detail-main">
+            <!-- [D] 틀렸을때 wrong, 맞췄을때 ok -->
+            <section class="unit ok">
+                <img src="https://placehold.it/340x340" alt="카드 이미지" class="unit_img">
+                <button type="button" class="unit_nextbtn">다음문제</button>
             </section>
 
-            <ul class="detail-btnarea">
+            <!-- [D] on : 문제 풀고 나서 추가 -->
+            <ul class="questbtn-area on">
                 <li>
-                    <!-- [D] on : 버튼 활성화-->
-                    <button type="button" class="questbtn on">
+                    <!-- [D] 문제 틀렸을때 wrong , 맞췄을때 ok 추가 -->
+                    <button type="button" class="questbtn wrong">
                         <span class="questbtn_tit">윤두준(비스트)</span>
+                        <span class="questbtn_x"></span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="questbtn ok">
+                        <span class="questbtn_tit">정답입니다</span>
                         <span class="questbtn_o"></span>
                     </button>
                 </li>
                 <li>
                     <button type="button" class="questbtn">
-                        <span class="questbtn_tit">이름이름이름이름이름이름</span>
+                        <span class="questbtn_tit">틀렸습니다</span>
                         <span class="questbtn_x"></span>
                     </button>
                 </li>
                 <li>
                     <button type="button" class="questbtn">
-                        <span class="questbtn_tit">이름이름이름이름이름이름</span>
-                        <span class="questbtn_x"></span>
-                    </button>
-                </li>
-                <li>
-                    <button type="button" class="questbtn">
-                        <span class="questbtn_tit">이름이름이름이름이름이름</span>
+                        <span class="questbtn_tit">틀리면X가표시됩니다</span>
                         <span class="questbtn_x"></span>
                     </button>
                 </li>
             </ul>
+        </main>
 
-        </section>
-
-        </div>
-
+    </section>
 <script type="text/javascript" src="/nuguya/resources/app.js"></script></body>
 
 </html>
