@@ -10,6 +10,7 @@
 
 <body>
     ${require('./partials/header.html')}
+
     <section class="resultpage">
         <header class="title">여자 배우 얼굴 맞추기 블라블라블라</header>
         <main class="result">
@@ -17,31 +18,34 @@
             <h1 class="result_current">6점</h1>
             <p class="result_average">유저 평균 점수 4.5점</p>
         </main>
-        <ul class="links">
-            <li>
-                <button class="links_link">
-                    <img src="./img/facebook@2x.png" alt="">
+        <div class="resultpage_right">
+            <ul class="links">
+                <li>
+                    <button class="links_link">
+                        <img src="./img/facebook@2x.png" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="links_link">
+                        <img src="./img/instagram@2x.png" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="links_link">
+                        <img src="./img/kakao@2x.png" alt="">
+                    </button>
+                </li>
+            </ul>
+            <div class="section result-options">
+                <button type="button" class="questbtn">
+                    <span class="questbtn_tit">메인으로 이동</span>
                 </button>
-            </li>
-            <li>
-                <button class="links_link">
-                    <img src="./img/instagram@2x.png" alt="">
+                <button type="button" class="questbtn">
+                    <span class="questbtn_tit">한 번 더 하기</span>
                 </button>
-            </li>
-            <li>
-                <button class="links_link">
-                    <img src="./img/kakao@2x.png" alt="">
-                </button>
-            </li>
-        </ul>
-        <div class="section result-options">
-            <button type="button" class="questbtn">
-                <span class="questbtn_tit">메인으로 이동</span>
-            </button>
-            <button type="button" class="questbtn">
-                <span class="questbtn_tit">한 번 더 하기</span>
-            </button>
+            </div>
         </div>
+
     </section>
 </body>
 
