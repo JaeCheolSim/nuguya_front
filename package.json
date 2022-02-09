@@ -34,7 +34,7 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-dev-server": "^3.9.0",
-    "yarn": "^1.19.1"
+    "yarn": "^1.22.0"
   },
   "dependencies": {
     "@babel/core": "^7.7.2",
